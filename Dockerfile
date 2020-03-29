@@ -1,5 +1,8 @@
 FROM ubuntu:bionic
-MAINTAINER Corey Forman
+
+LABEL version="1.3"
+LABEL description="Rekall docker based on Ubuntu 18.04 LTS"
+LABEL maintainer="https://github.com/digitalsleuth/rekall-docker"
 
 USER root
 RUN apt-get update && apt-get install -y \
