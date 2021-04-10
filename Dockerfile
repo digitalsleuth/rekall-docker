@@ -10,7 +10,7 @@
 # and allow you use run the command 'rekall' with any parameters required.
 
 FROM ubuntu:18.04
-LABEL version="2.0"
+LABEL version="2.1"
 LABEL description="Rekall docker based on Ubuntu 18.04 LTS"
 LABEL maintainer="https://github.com/digitalsleuth"
 ENV LANG C.UTF-8
@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
   add-apt-repository ppa:remnux/stable -y && apt-get update && apt-get install yara -y && \
   rm -rf /var/lib/apt/lists/*
 
-RUN python3 -m pip install --upgrade setuptools pip wheel readline future==0.16.0 pybindgen pyaff4==0.26.post6 capstone && \
+RUN python3 -m pip install --upgrade setuptools pip wheel==0.34.2 readline future==0.16.0 pybindgen pyaff4==0.26.post6 capstone && \
   python3 -m pip install fastchunking pyopenssl && \
   python3 -m pip install -q distorm3 && \
   python3 -m pip install rekall-agent rekall && \
